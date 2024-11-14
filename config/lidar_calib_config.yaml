@@ -1,0 +1,18 @@
+main_lidar_topic: "/livox/lidar_192_168_1_186"
+sub1_lidar_topic: "/livox/lidar_192_168_1_129"
+sub2_lidar_topic: "/livox/lidar_192_168_1_181"
+
+
+sub1_lidar_pose: [-0.72, 0.0, 1.76, 0.0, 15.0, 0.0]
+sub2_lidar_pose: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+
+#icp location
+plane_threshold: 0.3     #平面阈值
+opt_correspondences_threshold_normal: 0.4   
+opt_correspondences_threshold_relocation: 2.0 
+opt_max_iteration: 6 #最大迭代次数
+thread_num: 4 #线程数
+
+
+

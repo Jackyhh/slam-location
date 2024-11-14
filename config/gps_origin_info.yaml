@@ -1,0 +1,10 @@
+map_file_name: map_wise.pcd
+gps_origin:
+  longitude: 120.6474231
+  latitude: 31.46366019999999
+  altitude: 2.841000000000349
+  heading: -1.810379757122686
+loc_origin:
+  px: -2.100051940789563
+  py: -0.5722875158884617
+  yaw: 0.005819691345095634

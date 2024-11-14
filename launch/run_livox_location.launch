@@ -1,0 +1,18 @@
+<launch>
+    <arg name="package"         default="map_wise"/>
+
+    <!--- Run Rviz 运行rivz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find map_wise)/config/rviz/rviz_config.rviz" />
+    <!--- Location 运行定位算法-->
+    <node pkg="map_wise" type="location_node" name="location_node" output="screen" respawn="true">
+        <param name="package_name" type="string" value = "$(arg package)" />
+        <param name="config_file" type="string" value = "livox_config_outdoor.yaml" />
+        <param name="eskf_cfg_file" type="string" value = "eskf_cfg.yaml" />
+        <param name="use_imu" type="bool" value = "true" />
+    </node>
+    <!--- cloud 运行点云预处理-->
+    <node pkg="map_wise" type="livox_process_node" name="livox_process_node" output="screen" respawn="true">
+        <param name="package_name" type="string" value = "$(arg package)" />
+        <param name="config_file" type="string" value = "livox_config_outdoor.yaml" />
+    </node>
+</launch>

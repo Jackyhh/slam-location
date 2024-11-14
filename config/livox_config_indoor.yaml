@@ -1,0 +1,40 @@
+map_filename: "map_wise.pcd"  #地图文件名
+lidar_topic: "/livox/lidar_192_168_1_186" #激光雷达话题
+imu_topic: "/livox/imu_192_168_1_186" #IMU话题
+deskew_lidar_topic: "/deskew_cloud" #去畸变deskew激光雷达话题
+
+cmd_topic: "/loc_cmd" #定位指令话题
+
+pub_cloud_topic: "/deskew_cloud" #发布去畸变deskew激光雷达话题
+pub_odom_topic: "/agv_odom" #发布里程计话题
+
+reloc_threshold: 0.4 #重定位阈值
+
+imu_scale: 9.81 #IMU缩放因子
+
+#激光雷达到基座坐标系的偏移和旋转，单位为米和弧度
+lidar2base_x: 0.0 
+lidar2base_y: 0.0
+lidar2base_z: 0.0
+lidar2base_roll: 0.0
+lidar2base_pitch: 0.0
+lidar2base_yaw: 0.0
+
+map_filtr_leaf_size: 0.3 #地图滤波体素大小
+
+#icp location
+plane_threshold: 0.3     #平面阈值
+opt_correspondences_threshold_normal: 0.4   
+opt_correspondences_threshold_relocation: 2.0 
+opt_max_iteration: 3 #最大迭代次数
+thread_num: 6 #线程数
+
+#cloud preprocess
+min_range: 0.3 #最小范围
+max_range: 20.0   #最大范围
+filter_leaf_size: 0.9 #滤波体素大小
+limit_angle_min: -180.0 #最小角度
+limit_angle_max: 180.0 #最大角度
+
+
+enable_pub_test_info: true #是否发布测试信息
